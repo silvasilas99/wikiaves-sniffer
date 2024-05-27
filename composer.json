@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "silvasilas99/wikiaves_data_extractor",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {

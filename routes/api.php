@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Sniffer\SnifferController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+Route::middleware(["auth:sanctum"])->get("/user", function (Request $request) {
     return $request->user();
 });
+
+Route::controller(SnifferController::class)
+    ->prefix("sniffer")
+    ->name("sniffer.")
+    ->group(function () {
+        Route::post("/export", "exportDataFromAdvancedSearch")->name("export");
+        Route::get("/find", "findAllData")->name("find");
+    }
+);
